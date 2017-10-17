@@ -21,7 +21,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping("/todo")
+@RequestMapping("/api")
 public class TaskController {
 	@Autowired
 	private TaskServiceDecl	taskService;
