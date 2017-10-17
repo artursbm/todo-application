@@ -15,7 +15,8 @@ public class TaskService implements TaskServiceDecl {
 	private TaskRepository taskRepository;
 	
 	public List<Task> getAllTasks() {
-		return taskRepository.findAll();
+		List<Task> task = taskRepository.findAll();
+		return task;
 	}
 	
 	public Task createTask(Task task) {
