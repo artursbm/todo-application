@@ -11,21 +11,7 @@
 </head>
 
 <body ng-cloak>
-  <h2>Task List</h2>
-  <div flex>
-    <h1>adicione novas tarefas:</h1>
-    <form>
-      <input placeholder="Insira uma tarefa" type="text" ng-model="newTask">
-      <button ng-controller="AddTaskController">Adicionar</button>
-    </form>
-  </div>
-  <div flex ng-controller="TaskListController">
-    <ul class="unstyled">
-      <li ng-repeat="task in tasks">
-        <span class="done-{{task.complete}}">{{task.content}} </span>
-      </li>
-    </ul>
-  </div>
+  
 
 
 

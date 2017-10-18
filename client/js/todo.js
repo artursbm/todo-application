@@ -1,20 +1,28 @@
 var baseUrl = "http://localhost:8080/api";
 
 (function () {
-  var app = angular.module('taskApp', ['ngMaterial', 'ngResource']);
-  app.controller('TaskListController', function ($scope, $resource) {
-    $resource.get(baseUrl + '/tasks').then(function (response) {
+  var app = angular.module('taskApp', ['ngMaterial']);
+  app.controller('TaskListController', function ($scope, $http) {
+    $http.get(baseUrl + '/tasks').then(function (response) {
       var taskData = response.data;
       $scope.tasks = taskData;
       //        console.log($scope.tasks);
     });
   });
 
-  app.controller('AddTaskController', function ($scope, $resource) {
-    console.log($scope.newTask);
-
-    // $resource.post(baseUrl + '/tasks').then(function (request) {
-    // });
+  app.controller('AddTaskController', function ($scope, $http) {
+    $scope.addTask = function () {
+      var task = { 
+        content: $scope.newTask 
+      };
+      console.log(task);
+      $http.post(baseUrl + '/tasks', task).then(function success (response) {
+        console.log(response);
+      }, 
+      function fail (response) {
+        console.log(response);
+      });
+    };
   });
 
 })();
