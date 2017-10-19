@@ -163,3 +163,8 @@ span.name {
   height: 50%;
   width: 50%;
 }
+
+.done-true {
+  text-decoration: line-through;
+  color: silver;
+}

@@ -47,7 +47,7 @@
           <li ng-repeat="task in tasks">
             <md-card-actions layout-align="start">
               <md-icon ng-if="task.complete" class="material-icons">done</md-icon>
-              {{task.content}}
+              <span class="done-true" ng-if="task.complete">{{task.content}}</span>
               <md-button ng-if="task.complete" class="md-accent" ng-click="viewTask(task.id, task.content, $event)">
                 Visualizar
               </md-button>
