@@ -9,18 +9,13 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'> -->
   <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css" />
   <link rel="stylesheet" href="assets/app.css" />
 </head>
 
 <body flex layout="column" layout-align="center center">
   <md-toolbar layout="row" layout-align="center">
-    <!-- <md-button class="menu" hide-gt-sm ng-click="ul.toggleTask()" aria-label="Show task groups">
-      <md-icon md-svg-icon="menu"></md-icon>
-    </md-button> -->
     <h2 md-truncate flex>Task App</h2>
-
   </md-toolbar>
 
   <div flex layout="row" ng-controller="TaskController" id="mainBody">
@@ -38,10 +33,9 @@
           </md-input-container>
         </div>
       </form>
-
       <div>
         <div flex layout layout-align="end" class="listHeader">
-          {{remaining()}} de {{tasks.length}} restantes</span>
+          <span>{{remaining()}} de {{tasks.length}} restantes</span>
         </div>
         <ul>
           <li ng-repeat="task in tasks">
@@ -57,7 +51,7 @@
         </ul>
       </div>
       <div flex layout="row" layout-align="center">
-        <md-button class="md-accent md-raised" ng-click="getTasks()" class="md-accent">Refresh</md-button>
+        <md-button class="md-accent md-raised" ng-click="getTasks()">Refresh</md-button>
       </div>
     </md-content>
   </div>

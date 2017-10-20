@@ -32,7 +32,7 @@ var app = angular.module('taskApp', ['ngMaterial']);
           console.log(response);
         });
     };
-  
+
     $scope.viewTask = function (id, content, ev) {
       $mdDialog.show({
         controller: DialogController,
@@ -47,12 +47,7 @@ var app = angular.module('taskApp', ['ngMaterial']);
           content: content
         }
       })
-        .then(function (answer) {
-          $scope.status = answer;
-        },
-        function () {
-          $scope.status = 'no answer given';
-        });
+        .then();
     };
 
     $scope.deleteTask = function (id) {
@@ -87,5 +82,4 @@ var app = angular.module('taskApp', ['ngMaterial']);
       .warnPalette('red')
       .backgroundPalette('indigo');
   });
-
 })();

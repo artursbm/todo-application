@@ -18,7 +18,7 @@ public class TaskService implements TaskServiceDecl {
 		List<Task> task = taskRepository.findAll();
 		return task;
 	}
-	
+
 	public Task createTask(Task task) {
 		return taskRepository.save(task);
 	}
@@ -37,7 +37,6 @@ public class TaskService implements TaskServiceDecl {
 			return ResponseEntity.notFound().build();
 		}
 		task.setComplete(true);
-		task.setCompletedBy(taskDetails.getCompletedBy());
 		task.setGps(taskDetails.getLatitude(), taskDetails.getLongitude());
 		
 		Task updatedTask = taskRepository.save(task);
