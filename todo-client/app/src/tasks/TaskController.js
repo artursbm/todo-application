@@ -33,7 +33,7 @@ var app = angular.module('taskApp', ['ngMaterial']);
         });
     };
 
-    $scope.viewTask = function (id, content, ev) {
+    $scope.viewTask = function (id, content, image, ev) {
       $mdDialog.show({
         controller: DialogController,
         templateUrl: '/app/src/tasks/view/dialog1.tmpl.html',
@@ -44,7 +44,8 @@ var app = angular.module('taskApp', ['ngMaterial']);
         fullscreen: $scope.customFullscreen, // Only for -xs, -sm breakpoints.
         locals: {
           id: id,
-          content: content
+          content: content,
+          image: image
         }
       })
         .then();
@@ -61,9 +62,10 @@ var app = angular.module('taskApp', ['ngMaterial']);
     }
     $scope.getTasks();
 
-    function DialogController($scope, $mdDialog, id, content) {
+    function DialogController($scope, $http, $mdDialog, id, content, image) {
       $scope.id = id;
       $scope.content = content;
+      $scope.image = "http://localhost:8081/img/" + $scope.id + ".png";
       $scope.hide = function () {
         $mdDialog.hide();
       };
